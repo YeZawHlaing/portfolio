@@ -3,79 +3,102 @@ import { motion } from "framer-motion";
 const Services = () => {
   const skills = [
     {
-      name: "Frontend Development",
-      level: "Advanced",
-      years: "2+ Years",
+      name: "01 Html, Css, Bootstrap, JavaScript",
+      level: "2021-2022",
+      // years: "1st year",
     },
     {
-      name: "Backend Development",
-      level: "Advanced",
-      years: "3+ Years",
+      name: "02 Database Management System, JavaSE, J2EE, Software Engineering",
+      level: "2022-2023",
+      // years: "2nd year",
     },
     {
-      name: "Devops",
-      level: "Intermediate",
-      years: "1 Years",
+      name: "03 Internet of Things, PHP, C#, Software Requirement Specification, Software Design",
+      level: "2023-2024",
+      // years: "3rd year",
     },
     {
-      name: "Cloud Computing",
-      level: "Advanced",
-      years: "1 Years",
+      name: "04 Cloud Computing, OOP Design, Software Testing, Information Security",
+      level: "2024-2025",
+      // years: "4th year",
     },
- 
   ];
 
   return (
-    <section id="skills" className="p-10 bg-gray-900 min-h-screen text-white overflow-x-hidden">
-      <h2 className="text-4xl font-bold mb-16">What I have been learned</h2>
+    <section className="p-10 bg-gray-900 min-h-screen text-white overflow-x-hidden">
+      <h2 className="text-4xl font-bold mb-16">
+        My Computer Science Journey
+      </h2>
 
       <div className="relative">
-        {/* Vertical Line */}
+        {/* Animated Vertical Line */}
         <motion.div
-          initial={{ height: 0 }}
-          whileInView={{ height: "100%" }}
-          transition={{ duration: 1.2 }}
-          className="absolute left-6 top-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"
+          initial={{ height: 0, opacity: 0 }}
+          whileInView={{ height: "100%", opacity: 1 }}
+          transition={{ duration: 1.5, ease: "easeInOut" }}
+          viewport={{ once: true }}
+          className="absolute left-6 top-0 w-1 bg-gradient-to-b from-blue-500 via-purple-500 to-pink-500"
         />
 
-        <div className="space-y-12">
+        <div className="space-y-16">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
               className="relative flex items-center group"
               initial={{ opacity: 0, x: 80 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ delay: index * 0.15 }}
+              transition={{
+                delay: index * 0.25 + 0.4,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              viewport={{ once: true }}
             >
-              {/* Diamond (Centered on line using absolute positioning) */}
+              {/* FIXED Diamond Node */}
               <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ delay: index * 0.15 }}
-                className="absolute left-6 -translate-x-1/2 w-4 h-4 
-                           bg-blue-500 rotate-45 z-10
-                           shadow-md shadow-blue-500/30
-                           group-hover:scale-110 transition"
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                animate={{
+                  boxShadow: [
+                    "0 0 0px rgba(59,130,246,0.3)",
+                    "0 0 12px rgba(59,130,246,0.8)",
+                    "0 0 0px rgba(59,130,246,0.3)",
+                  ],
+                }}
+                transition={{
+                  delay: index * 0.25 + 0.6,
+                  duration: 0.6,
+                  type: "spring",
+                  stiffness: 200,
+                  damping: 12,
+                  boxShadow: {
+                    duration: 2,
+                    repeat: Infinity,
+                  },
+                }}
+                whileHover={{ scale: 1.3 }}
+                style={{ transform: "rotate(45deg)" }}
+                className="absolute left-6 -translate-x-1/2 w-4 h-4 bg-blue-500 z-10"
               />
 
               {/* Card */}
               <motion.div
-                whileHover={{ scale: 1.03 }}
-                className="ml-16 flex justify-between items-center w-full 
-                           bg-gray-800 px-6 py-4 rounded-xl shadow-lg border border-gray-700"
+                whileHover={{ scale: 1.04 }}
+                className="ml-16 w-full bg-gray-800 px-6 py-5 rounded-2xl shadow-xl border border-gray-700"
               >
-                {/* Left */}
-                <div className="flex items-center gap-4">
-                  <div className="text-2xl">{skill.icon}</div>
+                <div className="flex justify-between items-center">
                   <div>
-                    <p className="text-lg font-semibold">{skill.name}</p>
-                    <p className="text-sm text-gray-400">{skill.level}</p>
+                    <p className="text-lg font-semibold">
+                      {skill.name}
+                    </p>
+                    <p className="text-sm text-gray-400">
+                      {skill.level}
+                    </p>
                   </div>
-                </div>
 
-                {/* Right */}
-                <div className="text-sm text-gray-400 font-medium">
-                  {skill.years}
+                  {/* <div className="text-sm text-gray-400">
+                    {skill.years}
+                  </div> */}
                 </div>
               </motion.div>
             </motion.div>
