@@ -1,15 +1,13 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-const repoList = [
-  
-    "YeZawHlaing/Hotel-Management-System",
-  "YeZawHlaing/food-ordering-system-java",
-  "one-project-one-month/edu-verse",
-  "YeZawHlaing/O_Way",
-  "YeZawHlaing/Disaster-Preparedness-Myanmar-V1",
-  "YeZawHlaing/Disaster-Relief-Management-System",
-
+const repoNames = [
+  "Hotel-Management-System",
+  "food-ordering-system-java",
+  "edu-verse",
+  "O_Way",
+  "Disaster-Preparedness-Myanmar-V1",
+  "Disaster-Relief-Management-System",
 ];
 
 const techColors = {
@@ -22,105 +20,134 @@ const techColors = {
   CSS: "bg-blue-500",
 };
 
+const GITHUB_TOKEN = import.meta.env.VITE_GITHUB_TOKEN;
+
 const Projects = () => {
   const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProjects = async () => {
-      try {
-        const data = await Promise.all(
-          repoList.map(async (repoFullName) => {
-            const repoRes = await fetch(
-              `https://api.github.com/repos/${repoFullName}`
-            );
-            const repo = await repoRes.json();
+  // ✅ SINGLE FETCH (optimized)
+  const fetchRepos = async () => {
+    try {
+      const res = await fetch(
+        "https://api.github.com/users/YeZawHlaing/repos",
+        {
+          headers: {
+            Accept: "application/vnd.github+json",
+            Authorization: `Bearer ${GITHUB_TOKEN}`,
+          },
+        }
+      );
 
-            const langRes = await fetch(repo.languages_url);
-            const langsData = await langRes.json();
+      if (!res.ok) throw new Error(`GitHub error: ${res.status}`);
 
-            return {
-              id: repo.id,
-              name: repo.name,
-              description: repo.description,
-              url: repo.html_url,
-              stars: repo.stargazers_count,
-              languages: Object.keys(langsData),
-            };
-          })
-        );
+      const data = await res.json();
 
-        setProjects(data);
-      } catch (err) {
-        console.error(err);
-      } finally {
-        setLoading(false);
+      // ✅ filter only your selected repos
+      const filtered = data.filter((repo) =>
+        repoNames.includes(repo.name)
+      );
+
+      // ✅ map clean data
+      const formatted = filtered.map((repo) => ({
+        id: repo.id,
+        name: repo.name,
+        description: repo.description,
+        url: repo.html_url,
+        stars: repo.stargazers_count,
+        language: repo.language,
+      }));
+
+      // ✅ cache
+      localStorage.setItem("projects", JSON.stringify(formatted));
+
+      setProjects(formatted);
+    } catch (err) {
+      console.error(err);
+
+      // ✅ fallback to cache
+      const cached = localStorage.getItem("projects");
+      if (cached) {
+        setProjects(JSON.parse(cached));
       }
-    };
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    fetchProjects();
+  useEffect(() => {
+    const cached = localStorage.getItem("projects");
+
+    if (cached) {
+      setProjects(JSON.parse(cached));
+      setLoading(false);
+    } else {
+      fetchRepos();
+    }
   }, []);
 
   if (loading) {
     return (
       <section className="py-20 text-center">
-        <p className="text-gray-500">Loading projects...</p>
+        <p className="text-gray-400 animate-pulse">
+          Loading projects...
+        </p>
       </section>
     );
   }
 
   return (
-    <section id="projects" className="px-6 md:px-16 py-20">
+    <section id="projects" className="px-4 md:px-16 py-16">
       <div className="max-w-6xl mx-auto">
-
         {/* Title */}
         <motion.h2
-          initial={{ opacity: 0, y: -40 }}
+          initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-5xl font-bold mb-12 text-center"
+          className="text-3xl md:text-5xl font-bold mb-10 text-center"
         >
           Projects
         </motion.h2>
 
-        {/* Horizontal Scroll Container */}
-        <div className="flex gap-6 overflow-x-auto pb-6 scroll-smooth snap-x snap-mandatory scrollbar-hide">
-
+        {/* Horizontal Scroll */}
+        <div className="flex gap-5 overflow-x-auto pb-6 snap-x snap-mandatory scrollbar-hide">
           {projects.map((project, i) => (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, x: 50 }}
+              initial={{ opacity: 0, x: 60 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ scale: 1.05 }}
-              className="min-w-[300px] md:min-w-[350px] snap-center p-6 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-all"
+              className="min-w-[280px] md:min-w-[340px] snap-center p-5 rounded-2xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition"
             >
               {/* Title */}
-              <h3 className="text-xl font-semibold mb-2">
+              <h3 className="text-lg md:text-xl font-semibold mb-2">
                 {project.name.replace(/-/g, " ")}
               </h3>
 
               {/* Description */}
               <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 min-h-[60px]">
-                {project.description || "Readme provided."}
+                {project.description || "No description provided."}
               </p>
 
-              {/* Languages */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.languages.map((lang, idx) => (
+              {/* Language */}
+              <div className="mb-4">
+                {project.language && (
                   <span
-                    key={idx}
                     className={`text-xs px-2 py-1 rounded text-white ${
-                      techColors[lang] || "bg-gray-500"
+                      techColors[project.language] ||
+                      "bg-gray-500"
                     }`}
                   >
-                    {lang}
+                    {project.language}
                   </span>
-                ))}
+                )}
               </div>
 
               {/* Footer */}
               <div className="flex justify-between items-center text-sm">
-                <span className="text-gray-400">⭐ {project.stars}</span>
+                <span className="text-gray-400">
+                  ⭐ {project.stars}
+                </span>
 
                 <a
                   href={project.url}
