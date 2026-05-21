@@ -98,7 +98,7 @@ const About = () => {
               <div className="min-w-0">
                 <h3 className="font-semibold text-base text-slate-800 dark:text-slate-200">Junior Soultion Architect</h3>
                 <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 leading-relaxed">
-                  String understand with cloud provider such as AWS and hand on experience with cloud services like EC2, S3, SecurityGroup, VPCs, etc.
+                  Strong understanding with cloud provider such as AWS and hand on experience with cloud services like EC2, S3, SecurityGroup, VPCs, etc.
                 </p>
               </div>
             </div>
