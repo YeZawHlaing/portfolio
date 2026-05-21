@@ -22,7 +22,8 @@ const Navbar = ({ dark, setDark }) => {
           <a href="#about">About</a>
           <a href="#projects">Projects</a>
           <a href="#skills">Skills</a>
-          <a href="#experiences">Experience</a>
+          <a href="#certificates">Certifications</a>
+          <a href="#contact">Contact</a>
         </div>
 
         {/* Mobile Menu Button */}
@@ -61,7 +62,9 @@ const Navbar = ({ dark, setDark }) => {
           <a onClick={() => setOpen(false)} href="#about">About</a>
           <a onClick={() => setOpen(false)} href="#projects">Projects</a>
           <a onClick={() => setOpen(false)} href="#skills">Skills</a>
-          <a onClick={() => setOpen(false)} href="#experiences">Experience</a>
+          <a onClick={() => setOpen(false)} href="#certificates">Certifications</a>
+          <a onClick={() => setOpen(false)} href="#contact">Contact</a>
+
         </div>
       </div>
     </>

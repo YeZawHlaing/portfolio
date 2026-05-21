@@ -1,96 +1,76 @@
 import { motion } from "framer-motion";
-import {
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaGithub,
-  FaLinkedin,
-} from "react-icons/fa";
+import { FaPhone, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
 
 const Contact = () => {
   return (
     <section
       id="contact"
-      className="px-6 md:px-16 py-20 bg-gray-100 dark:bg-gray-950 text-gray-800 dark:text-white"
+      className="px-4 sm:px-6 lg:px-8 py-24 bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 w-full border-t border-slate-100 dark:border-slate-900"
     >
-      <div className="max-w-5xl mx-auto text-center space-y-12">
+      <div className="max-w-4xl mx-auto text-center space-y-12">
         
-        {/* Title */}
+        {/* Header Heading Area */}
         <motion.div
-          initial={{ opacity: 0, y: 40 }}
+          initial={{ opacity: 0, y: 15 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          className="space-y-3"
         >
-          <h2 className="text-4xl md:text-5xl font-bold">
+          <span className="text-xs font-bold tracking-widest text-blue-500 uppercase font-mono">
+            Get In Touch
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-slate-900 dark:text-white">
             Let’s Work Together
           </h2>
-          <p className="text-gray-500 dark:text-gray-400 mt-4 max-w-xl mx-auto">
-            I’m always open to discussing new projects, ideas, or opportunities.
+          <p className="text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto leading-relaxed">
+            I’m always open to discussing modern microservice systems, complex engineering challenges, or architectural integrations.
           </p>
         </motion.div>
 
-        {/* Contact Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {/* Channels Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
           
           {/* Email */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
+          <a 
+            href="mailto:yzaw3684@gmail.com"
+            className="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-900 bg-white dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-900/80 transition-all group shadow-sm"
           >
-            <FaEnvelope className="text-blue-500 text-2xl mx-auto mb-4" />
-            <p className="font-semibold">Email</p>
-            <p className="text-gray-500 mt-2">yzaw3684@gmail.com</p>
-          </motion.div>
+            <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 group-hover:text-blue-500 transition-colors shrink-0">
+              <FaEnvelope className="text-base" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-400 font-mono uppercase tracking-wider">Email</p>
+              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 truncate">yzaw3684@gmail.com</p>
+            </div>
+          </a>
 
           {/* Phone */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
+          <a 
+            href="tel:+959683776164"
+            className="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-900 bg-white dark:bg-slate-900/40 hover:bg-slate-100 dark:hover:bg-slate-900/80 transition-all group shadow-sm"
           >
-            <FaPhone className="text-green-500 text-2xl mx-auto mb-4" />
-            <p className="font-semibold">Phone</p>
-            <p className="text-gray-500 mt-2">09683776164</p>
-          </motion.div>
+            <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 group-hover:text-blue-500 transition-colors shrink-0">
+              <FaPhone className="text-base" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-400 font-mono uppercase tracking-wider">Phone</p>
+              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 truncate">09683776164</p>
+            </div>
+          </a>
 
           {/* Location */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="p-6 rounded-2xl bg-white dark:bg-gray-800 shadow-lg border border-gray-200 dark:border-gray-700"
-          >
-            <FaMapMarkerAlt className="text-red-500 text-2xl mx-auto mb-4" />
-            <p className="font-semibold">Location</p>
-            <p className="text-gray-500 mt-2">Mandalay, Myanmar</p>
-          </motion.div>
+          <div className="flex items-center gap-4 p-4 rounded-xl border border-slate-100 dark:border-slate-900 bg-white dark:bg-slate-900/40 shadow-sm">
+            <div className="p-3 rounded-lg bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 shrink-0">
+              <FaMapMarkerAlt className="text-base" />
+            </div>
+            <div className="min-w-0">
+              <p className="text-xs font-medium text-slate-400 font-mono uppercase tracking-wider">Location</p>
+              <p className="text-sm font-semibold text-slate-700 dark:text-slate-200 truncate">Mandalay, Myanmar</p>
+            </div>
+          </div>
+
         </div>
-
-        {/* Social Links */}
-        <motion.div
-          className="flex justify-center gap-6 mt-10"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-        >
-          {/* GitHub */}
-          <a
-            href="https://github.com/YeZawHlaing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-gray-900 text-white hover:bg-black transition"
-          >
-            <FaGithub />
-            GitHub
-          </a>
-
-          {/* LinkedIn */}
-          <a
-            href="https://www.linkedin.com/in/ye-zaw-hlaing-3b87b8299/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 px-5 py-3 rounded-xl bg-blue-600 text-white hover:bg-blue-700 transition"
-          >
-            <FaLinkedin />
-            LinkedIn
-          </a>
-        </motion.div>
       </div>
     </section>
   );

@@ -7,7 +7,13 @@ import Projects from "./components/Projects";
 import Blog from "./components/Blog";
 import Contact from "./components/Contact";
 import Experiences from "./components/Experiences"
+import MicroserviceProject from "./components/MicroserviceProject";
+import DevopsProject from "./components/DevopsProject";
 import Services from "./components/Services";
+import Certificates from "./components/Certificates";
+import Badges from "./components/Badges";
+import CloudEssential from "./components/CloudEssential";
+
 
 export default function App() {
   const [dark, setDark] = useState(
@@ -30,11 +36,17 @@ export default function App() {
       <Hero />
     
       <About />
-        <Services/>
-      <Experiences/>
+        {/* <Services/> */}
+      {/* <Experiences/> */}
       <Skills />
+      <MicroserviceProject/>
+      <DevopsProject/>
       <Projects />
+      <Badges/>
+      <CloudEssential/>
+       <Certificates/>
       <Contact />
+     
     </div>
   );
 }
