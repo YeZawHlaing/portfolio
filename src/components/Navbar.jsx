@@ -15,7 +15,7 @@ const Navbar = ({ dark, setDark }) => {
   }}
   className="font-bold text-xl cursor-pointer"
 >
-  Ye Zaw
+  Ye Zaw's Portfolio
 </h1>
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-6">
