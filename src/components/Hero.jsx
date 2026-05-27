@@ -136,7 +136,7 @@ const Hero = () => {
             {/* Sharp Minimal Showcase Frame */}
             <div className="w-full h-full rounded-2xl border border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-900/20 p-2 flex items-center justify-center relative overflow-hidden group shadow-sm">
               <img
-                src="/my_cha-removebg-preview.png"
+                src="/profile.jpg"
                 alt="Ye Zaw Hlaing Portrait"
                 className="w-full h-full object-contain filter drop-shadow-[0_6px_16px_rgba(0,0,0,0.05)] group-hover:scale-[1.01] transition-transform duration-500"
               />
