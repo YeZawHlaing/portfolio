@@ -7,14 +7,14 @@ const Cert = () => {
       title: "Myanmar Cyber Security Challenge 2025 (Open Level)",
       issuer: "Ministry of Transport and Communications",
       date: "Issued August 29, 2025",
-      image: "src/assets/photo_2026-06-06_22-54-01.jpg", // Replace with your real image asset path
+      image: "https://i.pinimg.com/736x/56/3c/11/563c1123e56776d934b0eb0e8f732db0.jpg", // Replace with your real image asset path
       pdfUrl: "/cybersecurity_challenge_2025.pdf", // Replace with your real file asset path if available
     },
     {
       title: "University Project Competition Runner-up / Participant (Semester-II)",
       issuer: "University of Computer Studies, Mandalay (UCSM)",
       date: "Issued February 20, 2023",
-      image: "src/assets/photo_2026-06-06_22-54-00.jpg", 
+      image: "https://i.pinimg.com/736x/2c/a6/f7/2ca6f78b41ef29ca7e1039f45e21e3e6.jpg", 
       pdfUrl: "/ucsm_project_competition_2023.pdf",
     }
   ];
