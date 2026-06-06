@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 const Experience = () => {
   // Hardcoded project URLs mapping directly to your GitHub endpoints
   const projectLinks = {
-    "qr-mall": "https://github.com/YeZawHlaing/QR-Mall",
-    "point-of-sale": "https://github.com/YeZawHlaing/point_of_sale",
+    "qr-mall": "https://github.com/one-project-one-month/food-ordering-system-java",
+    "point-of-sale": "https://github.com/one-project-one-month/edu-verse",
   };
 
   return (
@@ -124,11 +124,11 @@ const Experience = () => {
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-mono text-xs font-bold shrink-0">
-                        QR
+                        Food Orderign System
                       </div>
                       <div className="min-w-0">
                         <span className="text-sm sm:text-base font-bold text-slate-700 dark:text-slate-300 group-hover/chip:text-blue-500 dark:group-hover/chip:text-blue-400 transition-colors block truncate">
-                          QR-Mall
+                          food ordering system-java
                         </span>
                         <span className="text-[11px] font-semibold text-slate-400 font-mono block mt-0.5">
                           GitHub Repository
@@ -149,11 +149,11 @@ const Experience = () => {
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-500 dark:text-blue-400 flex items-center justify-center font-mono text-xs font-bold shrink-0">
-                        PS
+                        Edu Verse
                       </div>
                       <div className="min-w-0">
                         <span className="text-sm sm:text-base font-bold text-slate-700 dark:text-slate-300 group-hover/chip:text-blue-500 dark:group-hover/chip:text-blue-400 transition-colors block truncate">
-                          point_of_sale
+                          edu verse
                         </span>
                         <span className="text-[11px] font-semibold text-slate-400 font-mono block mt-0.5">
                           GitHub Repository
