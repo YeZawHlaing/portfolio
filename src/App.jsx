@@ -39,8 +39,8 @@ export default function App() {
     
       <About />
         {/* <Services/> */}
-      {/* <Experiences/> */}
       <Skills />
+      <Experiences/>
       <Projects />
       <Game/>
       <MicroserviceProject/>

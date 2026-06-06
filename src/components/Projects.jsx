@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const featuredRepositories = [
-  { owner: "one-project-one-month", name: "edu-verse" },
-  { owner: "one-project-one-month", name: "food-ordering-system-java" },
+  { owner: "YeZawHlaing", name: "QR-Mall" },
+  { owner: "YeZawHlaing", name: "point_of_sale" },
   { owner: "YeZawHlaing", name: "video-streaming-system" },
   { owner: "YeZawHlaing", name: "gRPC_starter" },
   { owner: "YeZawHlaing", name: "O_Way" },
