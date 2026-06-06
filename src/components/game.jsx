@@ -6,10 +6,8 @@ export default function Game() {
   const gameData = {
     title: "My Game Development in Roblox",
     subtitle: "Immersive Systems & Framework Design",
-    icon: "src/assets/cover.webp", 
+    icon: "src/assets/cover.jpeg", 
     playLink: "https://www.roblox.com/share?code=6c8228b0a7276f4c950a178c3174fc46&type=ExperienceDetails&stamp=1780759150628",
-    playLink1: "https://www.roblox.com/share?code=6c8228b0a7276f4c950a178c3174fc46&type=ExperienceDetails&stamp=1780759150628",
-
     videoUrl: "src/assets/video_2026-06-06_21-52-10.mp4", 
     images: [
       "https://i.pinimg.com/736x/28/68/6d/28686de9d88b8f9d60ec6de546e295b9.jpg",
