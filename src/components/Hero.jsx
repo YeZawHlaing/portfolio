@@ -32,7 +32,7 @@ const Hero = () => {
     <section id="hero" className="min-h-screen flex items-center px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-950 w-full overflow-hidden pt-16 md:pt-0">
       <div className="max-w-7xl w-full mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-12 md:gap-6 min-w-0">
         
-        {/* LEFT CONTENT COLUMNS (Balanced 6/12 Layout for clean spatial pairing) */}
+        {/* LEFT CONTENT COLUMNS */}
         <div className="md:col-span-6 text-center md:text-left space-y-6 min-w-0 order-2 md:order-1">
           <div className="space-y-2">
             <motion.span 
@@ -97,6 +97,7 @@ const Hero = () => {
 
             <div className="hidden sm:block h-6 w-px bg-slate-200 dark:bg-slate-800 mx-1 shrink-0" />
 
+            {/* Social Icons Container */}
             <div className="flex items-center gap-3 shrink-0">
               <a
                 href="https://github.com/YeZawHlaing" 
@@ -107,6 +108,24 @@ const Hero = () => {
               >
                 <FaGithub />
               </a>
+
+              {/* LeetCode Icon Added Beside GitHub */}
+              <a
+                href="https://leetcode.com/u/Ye_Zaw_01/" 
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LeetCode Profile Link"
+                className="p-2.5 text-lg text-slate-400 hover:text-orange-500 dark:hover:text-orange-400 border border-transparent hover:border-slate-100 dark:hover:border-slate-900 rounded-xl transition-all flex items-center justify-center"
+              >
+                <svg 
+                  viewBox="0 0 24 24" 
+                  className="w-[1em] h-[1em] fill-current"
+                  aria-hidden="true"
+                >
+                  <path d="M13.483 0a1.374 1.374 0 0 0-.961.411L7.11 5.826a1.373 1.373 0 0 0-.01 1.945L11.83 12.5a1.37 1.37 0 0 0 1.943-.01l4.416-4.43a1.374 1.374 0 0 0-.014-1.944l-4.717-4.704A1.36 1.36 0 0 0 13.483 0zm.014 2.146l4.316 4.304-4.017 4.03-4.315-4.314zM4.15 7.152a1.36 1.36 0 0 0-1.01.411L.411 10.294a1.373 1.373 0 0 0-.01 1.945l6.702 6.702a1.37 1.37 0 0 0 1.943-.01l8.528-8.527a1.373 1.373 0 0 0-.01-1.945l-1.688-1.688a1.373 1.373 0 0 0-1.945.01L6.47 14.242 4.15 11.921a1.367 1.367 0 0 0-.916-.411 1.355 1.355 0 0 0-.922.411l-.813.82.813.812 2.31 2.319a1.378 1.378 0 0 0 .973.41 1.367 1.367 0 0 0 .974-.41l8.031-8.031.813.813-8.032 8.032a1.378 1.378 0 0 0-.01 1.944L2.33 12.24a1.373 1.373 0 0 0-.01-1.945l1.83-1.83a1.37 1.37 0 0 0 .01-1.944 1.348 1.348 0 0 0-.01-.369z"/>
+                </svg>
+              </a>
+
               <a
                 href="https://www.linkedin.com/in/ye-zaw-hlaing-3b87b8299/" 
                 target="_blank"
@@ -120,20 +139,15 @@ const Hero = () => {
           </motion.div>
         </div>
 
-        {/* RIGHT PHOTO LAYER (6/12 Layout — Intentionally Scaled Up Container) */}
+        {/* RIGHT PHOTO LAYER */}
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
           className="md:col-span-6 flex justify-center md:justify-end order-1 md:order-2 min-w-0"
         >
-          {/* Increased boundaries significantly across all breakpoints */}
           <div className="relative w-72 h-72 sm:w-96 sm:h-96 md:w-[420px] md:h-[420px] aspect-square shrink-0">
-            
-            {/* Elegant background ambient soft light */}
             <div className="absolute inset-4 bg-gradient-to-tr from-blue-500/5 to-indigo-500/5 blur-3xl rounded-full dark:opacity-30 pointer-events-none" />
-
-            {/* Sharp Minimal Showcase Frame */}
             <div className="w-full h-full rounded-2xl border border-slate-100 dark:border-slate-900 bg-slate-50/50 dark:bg-slate-900/20 p-2 flex items-center justify-center relative overflow-hidden group shadow-sm">
               <img
                 src="/portfolio.jpg"

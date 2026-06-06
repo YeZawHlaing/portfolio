@@ -6,13 +6,14 @@ export default function Game() {
   const gameData = {
     title: "My Game Development in Roblox",
     subtitle: "Immersive Systems & Framework Design",
-    icon: "src/assets/cover.jpeg", 
+    icon: "https://i.pinimg.com/736x/f1/41/8b/f1418bc2c68f7978bf1604bd9c0c1303.jpg", 
     playLink: "https://www.roblox.com/share?code=6c8228b0a7276f4c950a178c3174fc46&type=ExperienceDetails&stamp=1780759150628",
-    videoUrl: "src/assets/video_2026-06-06_21-52-10.mp4", 
+    // videoUrl: "src/assets/video_2026-06-06_21-52-10.mp4", 
     images: [
       "https://i.pinimg.com/736x/28/68/6d/28686de9d88b8f9d60ec6de546e295b9.jpg",
       "https://i.pinimg.com/736x/95/ee/06/95ee065295d9d196883f5f2df3a41b8e.jpg",
       "https://i.pinimg.com/736x/0f/bc/4a/0fbc4ac51f5ecea0449133f47a02af2a.jpg",
+      "https://i.pinimg.com/736x/f1/41/8b/f1418bc2c68f7978bf1604bd9c0c1303.jpg",
     ],
     techStack: {
       "Core Tech": ["Roblox Engine", "Lua", "Luau Type Checker"],
@@ -92,7 +93,7 @@ export default function Game() {
                 <h4 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-3">Media Gallery</h4>
                 <div className="flex gap-4 overflow-x-auto pb-2 snap-x scrollbar-none">
                   {/* Highlight Video Clip */}
-                  <div className="flex-shrink-0 w-[280px] sm:w-[360px] aspect-video rounded-xl overflow-hidden bg-black snap-start border border-transparent dark:border-slate-800 shadow-sm">
+                  {/* <div className="flex-shrink-0 w-[280px] sm:w-[360px] aspect-video rounded-xl overflow-hidden bg-black snap-start border border-transparent dark:border-slate-800 shadow-sm">
                     <video 
                       src={gameData.videoUrl} 
                       controls 
@@ -100,7 +101,7 @@ export default function Game() {
                       className="w-full h-full object-cover"
                       poster={gameData.images[0]}
                     />
-                  </div>
+                  </div> */}
                   {/* Image Slides */}
                   {gameData.images.map((img, index) => (
                     <div 
