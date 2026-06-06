@@ -81,7 +81,7 @@ const MicroserviceProject = () => {
               </div>
             </div>
 
-            {/* Service Breakdown Grid */}
+            {/* Service Breakdown Grid
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 min-w-0 w-full">
               {coreServices.map((service, idx) => (
                 <div key={idx} className="p-5 rounded-xl border border-slate-100 dark:border-slate-800/80 bg-white dark:bg-slate-900 shadow-sm hover:shadow-md transition-all duration-200 min-w-0 w-full overflow-hidden">
@@ -93,7 +93,7 @@ const MicroserviceProject = () => {
                   </p>
                 </div>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Column 3: Professional Tech Stack Panel */}

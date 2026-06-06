@@ -13,6 +13,7 @@ import Services from "./components/Services";
 import Certificates from "./components/Certificates";
 import Badges from "./components/Badges";
 import CloudEssential from "./components/CloudEssential";
+import Game from "./components/game";
 
 
 export default function App() {
@@ -39,12 +40,13 @@ export default function App() {
         {/* <Services/> */}
       {/* <Experiences/> */}
       <Skills />
+      <Projects />
+      <Game/>
       <MicroserviceProject/>
       <DevopsProject/>
-      <Projects />
       <Badges/>
       <CloudEssential/>
-       <Certificates/>
+      <Certificates/>
       <Contact />
      
     </div>
