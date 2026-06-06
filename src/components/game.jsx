@@ -72,7 +72,7 @@ export default function Game() {
                 />
                 <div className="space-y-3 flex-1">
                   <div>
-                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Live Experience Platform</h3>
+                    <h3 className="text-xl font-bold text-slate-900 dark:text-white">Thingyan Festival (Mandalay)</h3>
                     <p className="text-xs font-medium text-emerald-500 font-mono mt-0.5">Engine: Roblox Engine (Lua)</p>
                   </div>
                   <div>

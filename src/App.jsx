@@ -14,6 +14,7 @@ import Certificates from "./components/Certificates";
 import Badges from "./components/Badges";
 import CloudEssential from "./components/CloudEssential";
 import Game from "./components/game";
+import Cert from "./components/Cert";
 
 
 export default function App() {
@@ -45,6 +46,7 @@ export default function App() {
       <MicroserviceProject/>
       <DevopsProject/>
       <Badges/>
+      <Cert/>
       <CloudEssential/>
       <Certificates/>
       <Contact />
