@@ -124,7 +124,7 @@ const Experience = () => {
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-10 h-10 rounded-lg bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center font-mono text-xs font-bold shrink-0">
-                        Food Orderign System
+                        FO
                       </div>
                       <div className="min-w-0">
                         <span className="text-sm sm:text-base font-bold text-slate-700 dark:text-slate-300 group-hover/chip:text-blue-500 dark:group-hover/chip:text-blue-400 transition-colors block truncate">
@@ -149,7 +149,7 @@ const Experience = () => {
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div className="w-10 h-10 rounded-lg bg-blue-500/10 text-blue-500 dark:text-blue-400 flex items-center justify-center font-mono text-xs font-bold shrink-0">
-                        Edu Verse
+                        EV
                       </div>
                       <div className="min-w-0">
                         <span className="text-sm sm:text-base font-bold text-slate-700 dark:text-slate-300 group-hover/chip:text-blue-500 dark:group-hover/chip:text-blue-400 transition-colors block truncate">
